@@ -5,7 +5,7 @@ function Houses() {
       <nav className="navbar bg-white">
         <div className="container">
           <a className="navbar-brand" href="#">
-            <img src="public/images/logo-airbnb.png" alt="airbnb logo" />
+            <img src="images/logo-airbnb.png" alt="airbnb logo" />
           </a>
           <div>
             <a className="btn btn-light">Login</a>
