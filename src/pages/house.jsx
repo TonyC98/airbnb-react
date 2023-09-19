@@ -6,7 +6,7 @@ function House() {
           <div className="row row-cols-2 align-items-center">
             <div className="col">
               <img
-                src="/public/images/logo-airbnb.png"
+                src="images/logo-airbnb.png"
                 width="100px"
                 alt="Airbnb.com"
               />
