@@ -2,9 +2,11 @@ function House() {
   return (
     <div>
       <div className="p-2 border-bottom border-secondary-subtle">
+        {/* header */}
         <div className="container">
           <div className="row row-cols-2 align-items-center">
             <div className="col">
+              {/* logo */}
               <img
                 src="images/logo-airbnb.png"
                 width="100px"
@@ -12,6 +14,7 @@ function House() {
               />
             </div>
             <div className="col text-end">
+              {/* user links */}
               <a
                 href="www.google.com"
                 type="button"
@@ -38,12 +41,14 @@ function House() {
         <div className="container g-0 p-0">
           <div className="row row-cols-2">
             <div className="col-6">
+              {/* main photo */}
               <img
                 src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
                 style={{ width: `100%` }}
               />
             </div>
             <div className="col-6">
+              {/* gallery */}
               <div className="row">
                 <div className="container">
                   <div className="row row-cols-3 gx-1">
