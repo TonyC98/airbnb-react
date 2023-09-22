@@ -1,4 +1,18 @@
+import HouseGalleryPhoto from "./HouseGalleryPhoto";
+
 function House() {
+  let gallery = [
+    "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png",
+    "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png",
+    "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png",
+    "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png",
+    "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png",
+    "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png",
+    "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png",
+    "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png",
+    "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png",
+  ];
+
   return (
     <div>
       <div className="p-2 border-bottom border-secondary-subtle">
@@ -42,70 +56,16 @@ function House() {
           <div className="row row-cols-2">
             <div className="col-6">
               {/* main photo */}
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
-                style={{ width: `100%` }}
-              />
+              <img src={gallery[0]} style={{ width: `100%` }} />
             </div>
             <div className="col-6">
               {/* gallery */}
               <div className="row">
                 <div className="container">
                   <div className="row row-cols-3 gx-1">
-                    <div className="col m-0 p-1">
-                      <img
-                        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
-                        style={{ width: `100%` }}
-                      />
-                    </div>
-                    <div className="col m-0 g-0 p-1">
-                      <img
-                        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png"
-                        style={{ width: `100%` }}
-                      />
-                    </div>
-                    <div className="col m-0 g-0 p-1">
-                      <img
-                        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png"
-                        style={{ width: `100%` }}
-                      />
-                    </div>
-                    <div className="col m-0 g-0 p-1">
-                      <img
-                        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png"
-                        style={{ width: `100%` }}
-                      />
-                    </div>
-                    <div className="col m-0 g-0 p-1">
-                      <img
-                        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png"
-                        style={{ width: `100%` }}
-                      />
-                    </div>
-                    <div className="col m-0 g-0 p-1">
-                      <img
-                        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png"
-                        style={{ width: `100%` }}
-                      />
-                    </div>
-                    <div className="col m-0 g-0 p-1">
-                      <img
-                        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png"
-                        style={{ width: `100%` }}
-                      />
-                    </div>
-                    <div className="col m-0 g-0 p-1">
-                      <img
-                        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png"
-                        style={{ width: `100%` }}
-                      />
-                    </div>
-                    <div className="col m-0 g-0 p-1">
-                      <img
-                        src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png"
-                        style={{ width: `100%` }}
-                      />
-                    </div>
+                    {gallery.map((photo, i) => (
+                      <HouseGalleryPhoto key={i} photo={photo} />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -116,6 +76,8 @@ function House() {
       <div className="container pt-5">
         <div className="row row-cols-2 gx-5 justify-content-between">
           <div className="col-7">
+            {/* this cell includes: house details; leave a review; reviews list */}
+            {/* house details */}
             <div>
               <h1>Luxury Villa in Chaweng</h1>
               <span>
@@ -151,6 +113,7 @@ function House() {
                 donec et odio.
               </p>
             </div>
+            {/* leave a review */}
             <div>
               <h2>0 Reviews</h2>
               <span className="d-block">Leave a review</span>
@@ -167,8 +130,25 @@ function House() {
                 </button>
               </form>
             </div>
+            {/* reviews list */}
+            <div className="mt-5">
+              {/* <div className="card">
+                <img
+                  src="https://randomuser.me/api/portraits/men/11.jpg"
+                  className="card-img-left"
+                  style={{ width: `40px` }}
+                />
+                <div className="card-body">
+                  <h6 className="card-subtitle mb-2 text-body-secondary">
+                    DD Month YYYY - HH:MM
+                  </h6>
+                </div>
+              </div> */}
+              <div className="card">previous review 02</div>
+            </div>
           </div>
           <div className="col-5">
+            {/* this cell includes: request booking */}
             {/* <!-- request box --> */}
             <div className="card" style={{ width: `18rem` }}>
               <div className="card-body">
@@ -187,12 +167,6 @@ function House() {
               </div>
             </div>
           </div>
-          {/* <div className="col-7">
-            <div>
-              existing reviews
-              <span>a list of previous reviews</span>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
