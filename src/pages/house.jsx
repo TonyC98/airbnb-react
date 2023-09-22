@@ -13,6 +13,25 @@ function House() {
     "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png",
   ];
 
+  let reviews = [
+    {
+      verdict: true,
+      guestPhoto: "sdsd",
+      guestName: "sddsd",
+      date: "asdads",
+      time: "asdasfa",
+      content: "asda",
+    },
+    {
+      verdict: false,
+      guestPhoto: "sdsd",
+      guestName: "sddsd",
+      date: "asdads",
+      time: "asdasfa",
+      content: "asda",
+    },
+  ];
+
   return (
     <div>
       <div className="p-2 border-bottom border-secondary-subtle">
@@ -132,19 +151,52 @@ function House() {
             </div>
             {/* reviews list */}
             <div className="mt-5">
-              {/* <div className="card">
-                <img
-                  src="https://randomuser.me/api/portraits/men/11.jpg"
-                  className="card-img-left"
-                  style={{ width: `40px` }}
-                />
-                <div className="card-body">
-                  <h6 className="card-subtitle mb-2 text-body-secondary">
-                    DD Month YYYY - HH:MM
-                  </h6>
+              <div className="container">
+                {/* review #1 */}
+                <div className="row row-cols-2 gx-5 justify-content-between">
+                  <div className="col-1">
+                    <img
+                      src="https://randomuser.me/api/portraits/men/11.jpg"
+                      style={{ width: `40px` }}
+                    />
+                  </div>
+                  <div className="col-11">
+                    <span>
+                      <small>DD Month YYY - HH:MM</small>
+                    </span>
+                    <h6>Guest Name</h6>
+                    <p>
+                      sample review text Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Deserunt, asperiores! Corporis dolorem
+                      facere sequi esse, libero tenetur, odio et culpa fugit
+                      nesciunt cum exercitationem temporibus quia, ad maiores
+                      perferendis quidem?
+                    </p>
+                  </div>
                 </div>
-              </div> */}
-              <div className="card">previous review 02</div>
+                {/* review #2 */}
+                <div className="row row-cols-2 gx-5 justify-content-between">
+                  <div className="col-1">
+                    <img
+                      src="https://randomuser.me/api/portraits/men/11.jpg"
+                      style={{ width: `40px` }}
+                    />
+                  </div>
+                  <div className="col-11">
+                    <span>
+                      <small>DD Month YYY - HH:MM</small>
+                    </span>
+                    <h6>Guest Name</h6>
+                    <p>
+                      sample review text Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Deserunt, asperiores! Corporis dolorem
+                      facere sequi esse, libero tenetur, odio et culpa fugit
+                      nesciunt cum exercitationem temporibus quia, ad maiores
+                      perferendis quidem?
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="col-5">
