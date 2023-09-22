@@ -1,6 +1,10 @@
-import HouseGalleryPhoto from "./HouseGalleryPhoto";
+// Packages
+import { useState } from "react";
+// import HouseGalleryPhoto from "./HouseGalleryPhoto";
 
+// Component
 function House() {
+  // States & Variables
   let house = {
     title: "Luxury Villa in Chaweng",
     description:
@@ -27,6 +31,8 @@ function House() {
     },
   };
 
+  const [selectedPhoto, setSelectedPhoto] = useState(house.photos[0]);
+
   let reviews = [
     {
       date: "02 February 2023",
@@ -48,6 +54,9 @@ function House() {
     },
   ];
 
+  // Functions
+
+  // Render JSX
   return (
     <div>
       <div className="p-2 border-bottom border-secondary-subtle">
@@ -58,7 +67,7 @@ function House() {
               {/* logo */}
               <img
                 src="images/logo-airbnb.png"
-                width="100px"
+                style={{ width: "100px" }}
                 alt="Airbnb.com"
               />
             </div>
@@ -91,7 +100,7 @@ function House() {
           <div className="row row-cols-2">
             <div className="col-6">
               {/* main photo */}
-              <img src={house.photos[0]} style={{ width: `100%` }} />
+              <img src={selectedPhoto} style={{ width: `100%` }} />
             </div>
             <div className="col-6">
               {/* gallery */}
@@ -99,7 +108,13 @@ function House() {
                 <div className="container">
                   <div className="row row-cols-3 gx-1">
                     {house.photos.map((photo, i) => (
-                      <HouseGalleryPhoto key={i} photo={photo} />
+                      // <HouseGalleryPhoto key={i} photo={photo} />
+                      <div
+                        className="col m-0 g-0 p-1"
+                        onClick={() => setSelectedPhoto(photo)}
+                      >
+                        <img src={photo} key={i} style={{ width: `100%` }} />
+                      </div>
                     ))}
                   </div>
                 </div>
