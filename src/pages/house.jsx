@@ -138,7 +138,7 @@ function House() {
             </div>
             {/* leave a review */}
             <div>
-              <h2>0 Reviews</h2>
+              <h2>{reviews.length} Reviews</h2>
               <span className="d-block">Leave a review</span>
               <form>
                 <textarea rows="7" className="d-block"></textarea>
@@ -160,44 +160,32 @@ function House() {
                 <div className="row row-cols-2 gx-5 justify-content-between">
                   <div className="col-1">
                     <img
-                      src="https://randomuser.me/api/portraits/men/11.jpg"
+                      src={reviews[0].author.avatar}
                       style={{ width: `40px` }}
                     />
                   </div>
                   <div className="col-11">
                     <span>
-                      <small>DD Month YYY - HH:MM</small>
+                      <small>{reviews[0].date}</small>
                     </span>
-                    <h6>Guest Name</h6>
-                    <p>
-                      sample review text Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Deserunt, asperiores! Corporis dolorem
-                      facere sequi esse, libero tenetur, odio et culpa fugit
-                      nesciunt cum exercitationem temporibus quia, ad maiores
-                      perferendis quidem?
-                    </p>
+                    <h6>{reviews[0].author.name}</h6>
+                    <p>{reviews[0].description}</p>
                   </div>
                 </div>
                 {/* review #2 */}
                 <div className="row row-cols-2 gx-5 justify-content-between">
                   <div className="col-1">
                     <img
-                      src="https://randomuser.me/api/portraits/men/11.jpg"
+                      src={reviews[1].author.avatar}
                       style={{ width: `40px` }}
                     />
                   </div>
                   <div className="col-11">
                     <span>
-                      <small>DD Month YYY - HH:MM</small>
+                      <small>{reviews[1].date}</small>
                     </span>
-                    <h6>Guest Name</h6>
-                    <p>
-                      sample review text Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Deserunt, asperiores! Corporis dolorem
-                      facere sequi esse, libero tenetur, odio et culpa fugit
-                      nesciunt cum exercitationem temporibus quia, ad maiores
-                      perferendis quidem?
-                    </p>
+                    <h6>{reviews[1].author.name}</h6>
+                    <p>{reviews[1].description}</p>
                   </div>
                 </div>
               </div>
@@ -211,7 +199,7 @@ function House() {
               <div className="card-body">
                 <h2 className="card-title">${house.price}/night</h2>
                 <span>
-                  <small>X Reviews</small>
+                  <small>{reviews.length} Reviews</small>
                 </span>
                 <textarea
                   rows="7"
