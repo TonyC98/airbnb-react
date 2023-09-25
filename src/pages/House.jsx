@@ -32,8 +32,7 @@ function House() {
   };
 
   const [selectedPhoto, setSelectedPhoto] = useState(house.photos[0]);
-
-  let reviews = [
+  const [reviews, setReviews] = useState([
     {
       date: "02 February 2023",
       description: "it sux. 3/10.",
@@ -52,9 +51,23 @@ function House() {
         avatar: "https://randomuser.me/api/portraits/men/11.jpg",
       },
     },
-  ];
+  ]);
 
   // Functions
+  function addReview(e) {
+    e.preventDefault();
+    setReviews(
+      reviews.concat({
+        date: "30 February 2029",
+        description: e.target.reviewContent.value,
+        rating: -1,
+        author: {
+          name: "new reviewer",
+          avatar: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+      })
+    );
+  }
 
   // Render JSX
   return (
@@ -155,54 +168,42 @@ function House() {
             <div>
               <h2>{reviews.length} Reviews</h2>
               <span className="d-block">Leave a review</span>
-              <form>
-                <textarea rows="7" className="d-block"></textarea>
+              <form onSubmit={addReview}>
+                <textarea
+                  name="reviewContent"
+                  rows="7"
+                  className="d-block"
+                  style={{ width: `100%` }}
+                ></textarea>
                 <span className="d-block">
                   <i className="fa-solid fa-thumbs-up"></i>{" "}
                   <input type="radio" name="review" />
                   <i className="fa-solid fa-thumbs-down"></i>{" "}
                   <input type="radio" name="review" />
                 </span>
-                <button type="button" className="btn btn-success">
-                  Submit
-                </button>
+                <button className="btn btn-success">Submit</button>
               </form>
             </div>
             {/* reviews list */}
             <div className="mt-5">
               <div className="container">
-                {/* review #1 */}
-                <div className="row row-cols-2 gx-5 justify-content-between">
-                  <div className="col-1">
-                    <img
-                      src={reviews[0].author.avatar}
-                      style={{ width: `40px` }}
-                    />
+                {reviews.map((review, i) => (
+                  <div className="row row-cols-2 gx-5 justify-content-between">
+                    <div className="col-1">
+                      <img
+                        src={review.author.avatar}
+                        style={{ width: `40px` }}
+                      />
+                    </div>
+                    <div className="col-11">
+                      <span>
+                        <small>{review.date}</small>
+                      </span>
+                      <h6>{review.author.name}</h6>
+                      <p>{review.description}</p>
+                    </div>
                   </div>
-                  <div className="col-11">
-                    <span>
-                      <small>{reviews[0].date}</small>
-                    </span>
-                    <h6>{reviews[0].author.name}</h6>
-                    <p>{reviews[0].description}</p>
-                  </div>
-                </div>
-                {/* review #2 */}
-                <div className="row row-cols-2 gx-5 justify-content-between">
-                  <div className="col-1">
-                    <img
-                      src={reviews[1].author.avatar}
-                      style={{ width: `40px` }}
-                    />
-                  </div>
-                  <div className="col-11">
-                    <span>
-                      <small>{reviews[1].date}</small>
-                    </span>
-                    <h6>{reviews[1].author.name}</h6>
-                    <p>{reviews[1].description}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -220,6 +221,7 @@ function House() {
                   rows="7"
                   placeholder="Send the host a message..."
                   className="d-block"
+                  style={{ width: `100%` }}
                 ></textarea>
                 <a href="#" className="btn btn-success">
                   Request Booking
@@ -234,3 +236,24 @@ function House() {
 }
 
 export default House;
+
+{
+  /* <div>
+        <span className="d-block">Leave a review</span>
+        <form onSubmit={(e) => addReview(e)}>
+          <textarea
+            name="reviewContent"
+            rows="7"
+            className="d-block"
+            style={{ width: `100%` }}
+          ></textarea>
+          <span className="d-block">
+            <i className="fa-solid fa-thumbs-up"></i>{" "}
+            <input type="radio" name="reviewVerdict" />
+            <i className="fa-solid fa-thumbs-down"></i>{" "}
+            <input type="radio" name="reviewVerdict" />
+          </span>
+          <button className="btn btn-success">Submit</button>
+        </form>
+      </div>; */
+}
