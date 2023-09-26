@@ -5,7 +5,7 @@ function HouseCreate() {
       title: e.target.newHouseTitle.value,
       description: e.target.newHouseDesc.value,
       price: e.target.newHousePrice.value,
-      booking: null,
+      booking: false,
       location: e.target.newHouseLocation.value,
       rooms: e.target.newHouseRooms.value,
       rating: 0,

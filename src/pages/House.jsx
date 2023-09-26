@@ -10,7 +10,7 @@ function House() {
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus feugiat in ante metus dictum at tempor commodo. Purus in massa tempor nec feugiat nisl. Non curabitur gravida arcu ac tortor. Arcu non sodales neque sodales ut etiam sit amet nisl. Diam maecenas sed enim ut sem viverra aliquet eget. Amet nisl purus in mollis. Viverra vitae congue eu consequat ac felis donec et odio.",
     price: 320,
-    booking: true,
+    booking: false,
     location: "Koh Samui",
     rooms: 4,
     rating: -1,
@@ -32,6 +32,8 @@ function House() {
   };
 
   const [selectedPhoto, setSelectedPhoto] = useState(house.photos[0]);
+  const [reviewSubmitted, setReviewSubmitted] = useState(false);
+  const [bookingRequested, setBookingRequested] = useState(house.booking);
   const [reviews, setReviews] = useState([
     {
       date: "02 February 2023",
@@ -72,7 +74,22 @@ function House() {
     });
 
     setReviews(newReviews);
+    setReviewSubmitted(true);
   }
+
+  function requestBooking(e) {
+    e.preventDefault();
+    house.booking = true;
+    setBookingRequested(house.booking);
+  }
+
+  // const myVar = reviewSubmitted ? 'hi' : 'bye'
+  // const myVar = reviewSubmitted && 'hi' // if false, myVar = false, if true, myVar = 'hi'
+  // const myVar = reviewSubmitted || 'hi' // if reviewSubmitted, then myVar = reviewSubmitted, if not, and 'hi', then myVar = 'hi'
+
+  // if (cond1 || cond2) { // if cond1, then do X, if not, and cond2, then do X, if not, do nothing
+  //   // X
+  // }
 
   // Render JSX
   return (
@@ -172,22 +189,28 @@ function House() {
             {/* leave a review */}
             <div>
               <h2>{reviews.length} Reviews</h2>
-              <span className="d-block">Leave a review</span>
-              <form onSubmit={addReview}>
-                <textarea
-                  name="reviewContent"
-                  rows="7"
-                  className="d-block"
-                  style={{ width: `100%` }}
-                ></textarea>
-                <span className="d-block">
-                  <i className="fa-solid fa-thumbs-up"></i>{" "}
-                  <input type="radio" name="reviewVerdict" value={1} />
-                  <i className="fa-solid fa-thumbs-down"></i>{" "}
-                  <input type="radio" name="reviewVerdict" value={-1} />
-                </span>
-                <button className="btn btn-success">Submit</button>
-              </form>
+              {reviewSubmitted ? (
+                <div>Thank you so much for your review! ^_^</div>
+              ) : (
+                <div>
+                  <span className="d-block">Leave a review</span>
+                  <form onSubmit={addReview}>
+                    <textarea
+                      name="reviewContent"
+                      rows="7"
+                      className="d-block"
+                      style={{ width: `100%` }}
+                    ></textarea>
+                    <span className="d-block">
+                      <i className="fa-solid fa-thumbs-up"></i>{" "}
+                      <input type="radio" name="reviewVerdict" value={1} />
+                      <i className="fa-solid fa-thumbs-down"></i>{" "}
+                      <input type="radio" name="reviewVerdict" value={-1} />
+                    </span>
+                    <button className="btn btn-success">Submit</button>
+                  </form>
+                </div>
+              )}
             </div>
             {/* reviews list */}
             <div className="mt-5">
@@ -222,15 +245,23 @@ function House() {
                 <span>
                   <small>{reviews.length} Reviews</small>
                 </span>
-                <textarea
-                  rows="7"
-                  placeholder="Send the host a message..."
-                  className="d-block"
-                  style={{ width: `100%` }}
-                ></textarea>
-                <a href="#" className="btn btn-success">
-                  Request Booking
-                </a>
+                {bookingRequested ? (
+                  <div>Thank you for your enquiry.</div>
+                ) : (
+                  <div>
+                    <form onSubmit={requestBooking}>
+                      <textarea
+                        rows="7"
+                        placeholder="Send the host a message..."
+                        className="d-block"
+                        style={{ width: `100%` }}
+                      ></textarea>
+                      <button className="btn btn-success">
+                        Request Booking
+                      </button>
+                    </form>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -241,24 +272,3 @@ function House() {
 }
 
 export default House;
-
-{
-  /* <div>
-        <span className="d-block">Leave a review</span>
-        <form onSubmit={(e) => addReview(e)}>
-          <textarea
-            name="reviewContent"
-            rows="7"
-            className="d-block"
-            style={{ width: `100%` }}
-          ></textarea>
-          <span className="d-block">
-            <i className="fa-solid fa-thumbs-up"></i>{" "}
-            <input type="radio" name="reviewVerdict" />
-            <i className="fa-solid fa-thumbs-down"></i>{" "}
-            <input type="radio" name="reviewVerdict" />
-          </span>
-          <button className="btn btn-success">Submit</button>
-        </form>
-      </div>; */
-}
