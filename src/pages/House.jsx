@@ -60,13 +60,15 @@ function House() {
       reviews.concat({
         date: "30 February 2029",
         description: e.target.reviewContent.value,
-        rating: -1,
+        rating: e.target.reviewVerdict.value,
         author: {
           name: "new reviewer",
           avatar: "https://randomuser.me/api/portraits/men/11.jpg",
         },
       })
     );
+    console.log(reviews);
+    // console.log(e.target.reviewVerdict.value);
   }
 
   // Render JSX
@@ -177,9 +179,9 @@ function House() {
                 ></textarea>
                 <span className="d-block">
                   <i className="fa-solid fa-thumbs-up"></i>{" "}
-                  <input type="radio" name="review" />
+                  <input type="radio" name="reviewVerdict" value={1} />
                   <i className="fa-solid fa-thumbs-down"></i>{" "}
-                  <input type="radio" name="review" />
+                  <input type="radio" name="reviewVerdict" value={-1} />
                 </span>
                 <button className="btn btn-success">Submit</button>
               </form>
