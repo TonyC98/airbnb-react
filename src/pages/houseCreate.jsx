@@ -9,12 +9,23 @@ function HouseCreate() {
       location: e.target.newHouseLocation.value,
       rooms: e.target.newHouseRooms.value,
       rating: 0,
-      photos: [],
+      photos: [
+        e.target.photo01.value,
+        e.target.photo02.value,
+        e.target.photo03.value,
+        e.target.photo04.value,
+        e.target.photo05.value,
+        e.target.photo06.value,
+        e.target.photo07.value,
+        e.target.photo08.value,
+        e.target.photo09.value,
+      ],
       host: {
         name: "name",
         avatar: "https://randomuser.me/api/portraits/men/11.jpg",
       },
     };
+    console.log(newHouse.photos);
     console.log(newHouse);
     // console.log(
     //   e.target.newHouseTitle.value,
@@ -29,21 +40,24 @@ function HouseCreate() {
         <div className="container">
           <div className="row row-cols-2 align-items-center">
             <div className="col">
+              {/* logo */}
               <img
                 src="images/logo-airbnb.png"
-                style={{ width: `100px` }}
+                style={{ width: "100px" }}
                 alt="Airbnb.com"
               />
             </div>
             <div className="col text-end">
+              {/* user links */}
               <a
                 href="www.google.com"
                 type="button"
-                className="btn btn-outline-secondary"
+                className="btn btn-outline-secondary me-1"
               >
                 <img
                   src="https://randomuser.me/api/portraits/men/11.jpg"
-                  style={{ width: `20px` }}
+                  className="me-1"
+                  style={{ width: `20px`, borderRadius: `100%` }}
                 />
                 Oisin
               </a>
@@ -60,12 +74,12 @@ function HouseCreate() {
       </div>
       <div className="container pt-5">
         <h1>List a House</h1>
-        <form onSubmit={addHouse}>
-          <div className="form-group">
+        <form onSubmit={addHouse} className="mb-5">
+          <div className="form-group mb-2">
             <label for="">Short Title</label>
             <input name="newHouseTitle" type="text" className="form-control" />
           </div>
-          <div className="form-group">
+          <div className="form-group mb-2">
             <label for="">Description</label>
             <textarea
               name="newHouseDesc"
@@ -73,7 +87,7 @@ function HouseCreate() {
               rows="9"
             ></textarea>
           </div>
-          <div className="form-group">
+          <div className="form-group mb-2">
             <label for="">Number of Rooms</label>
             <input
               name="newHouseRooms"
@@ -81,7 +95,7 @@ function HouseCreate() {
               className="form-control"
             />
           </div>
-          <div className="form-group">
+          <div className="form-group mb-2">
             <label for="">Location</label>
             <select name="newHouseLocation" className="form-control">
               <option>Koh Samui</option>
@@ -89,7 +103,7 @@ function HouseCreate() {
               <option>Bali</option>
             </select>
           </div>
-          <div className="form-group">
+          <div className="form-group mb-2">
             <label for="">Price (per night)</label>
             <div className="input-group">
               <span className="input-group-text" id="basic-addon1">
@@ -102,51 +116,60 @@ function HouseCreate() {
               />
             </div>
           </div>
-          <div className="form-group">
+          <div className="form-group mb-3">
             <label for="">Add Photos (up to 9)</label>
             <input
               type="text"
-              className="form-control"
+              name="photo01"
+              className="form-control mb-1"
               placeholder="http://..."
             />
             <input
               type="text"
-              className="form-control"
+              name="photo02"
+              className="form-control mb-1"
               placeholder="http://..."
             />
             <input
               type="text"
-              className="form-control"
+              name="photo03"
+              className="form-control mb-1"
               placeholder="http://..."
             />
             <input
               type="text"
-              className="form-control"
+              name="photo04"
+              className="form-control mb-1"
               placeholder="http://..."
             />
             <input
               type="text"
-              className="form-control"
+              name="photo05"
+              className="form-control mb-1"
               placeholder="http://..."
             />
             <input
               type="text"
-              className="form-control"
+              name="photo06"
+              className="form-control mb-1"
               placeholder="http://..."
             />
             <input
               type="text"
-              className="form-control"
+              name="photo07"
+              className="form-control mb-1"
               placeholder="http://..."
             />
             <input
               type="text"
-              className="form-control"
+              name="photo08"
+              className="form-control mb-1"
               placeholder="http://..."
             />
             <input
               type="text"
-              className="form-control"
+              name="photo09"
+              className="form-control mb-1"
               placeholder="http://..."
             />
           </div>
