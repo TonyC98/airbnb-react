@@ -56,19 +56,22 @@ function House() {
   // Functions
   function addReview(e) {
     e.preventDefault();
-    setReviews(
-      reviews.concat({
-        date: "30 February 2029",
-        description: e.target.reviewContent.value,
-        rating: e.target.reviewVerdict.value,
-        author: {
-          name: "new reviewer",
-          avatar: "https://randomuser.me/api/portraits/men/11.jpg",
-        },
-      })
-    );
-    console.log(reviews);
-    // console.log(e.target.reviewVerdict.value);
+
+    // clone array to avoid mutating the state (react doesn't like that)
+    // const newReviews = [...reviews]; // alternative 1: spread operator (you can research about it)
+    const newReviews = reviews.slice(); // alternative 2: slice the pie in 1 piece ^_^
+
+    newReviews.unshift({
+      date: "30 February 2029",
+      description: e.target.reviewContent.value,
+      rating: e.target.reviewVerdict.value,
+      author: {
+        name: "new reviewer",
+        avatar: "https://randomuser.me/api/portraits/men/11.jpg",
+      },
+    });
+
+    setReviews(newReviews);
   }
 
   // Render JSX

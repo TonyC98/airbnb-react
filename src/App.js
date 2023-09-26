@@ -5,7 +5,7 @@ import HouseCreate from "./pages/HouseCreate";
 function App() {
   return (
     <div className="App">
-      <House />
+      <HouseCreate />
     </div>
   );
 }
