@@ -111,11 +111,12 @@ function House() {
               <a
                 href="www.google.com"
                 type="button"
-                className="btn btn-outline-secondary"
+                className="btn btn-outline-secondary me-1"
               >
                 <img
                   src="https://randomuser.me/api/portraits/men/11.jpg"
-                  style={{ width: `20px` }}
+                  className="me-1"
+                  style={{ width: `20px`, borderRadius: `100%` }}
                 />
                 Oisin
               </a>
@@ -133,9 +134,16 @@ function House() {
       <div className="border-bottom border-secondary-subtle">
         <div className="container g-0 p-0">
           <div className="row row-cols-2">
-            <div className="col-6">
+            <div
+              className="col-6"
+              style={{
+                backgroundImage: `url(${selectedPhoto})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+              }}
+            >
               {/* main photo */}
-              <img src={selectedPhoto} style={{ width: `100%` }} />
+              {/* <img src={selectedPhoto} style={{ width: `100%` }} /> */}
             </div>
             <div className="col-6">
               {/* gallery */}
@@ -145,10 +153,14 @@ function House() {
                     {house.photos.map((photo, i) => (
                       // <HouseGalleryPhoto key={i} photo={photo} />
                       <div
-                        className="col m-0 g-0 p-1"
+                        className="col m-0 g-0 p-4"
                         onClick={() => setSelectedPhoto(photo)}
                       >
-                        <img src={photo} key={i} style={{ width: `100%` }} />
+                        <img
+                          src={photo}
+                          key={i}
+                          style={{ width: `100%`, cursor: "pointer" }}
+                        />
                       </div>
                     ))}
                   </div>
@@ -164,33 +176,59 @@ function House() {
             {/* this cell includes: house details; leave a review; reviews list */}
             {/* house details */}
             <div>
-              <h1>{house.title}</h1>
-              <span>
-                <small>
-                  <i className="fa-solid fa-location-dot"></i> {house.location}{" "}
-                  • {house.rooms} Rooms
-                </small>
-              </span>
-              <div className="container">
+              {/* title details */}
+              <div className="mb-4">
+                <h1>{house.title}</h1>
+                <span>
+                  <small>
+                    <i className="fa-solid fa-location-dot"></i>{" "}
+                    {house.location} • {house.rooms} Rooms
+                  </small>
+                </span>
+              </div>
+              {/* host details */}
+              <div className="container mb-4">
                 <div className="row row-cols-2">
                   <div className="col-1">
-                    <img src={house.host.avatar} style={{ width: `40px` }} />
+                    <img
+                      src={house.host.avatar}
+                      style={{ width: `45px`, borderRadius: `100px` }}
+                    />
                   </div>
                   <div className="col">
-                    <span className="d-block">
+                    <span className="d-block" style={{ color: `#7b7b7b` }}>
                       <small>Hosted by</small>
                     </span>
-                    <span>{house.host.name}</span>
+                    <span>
+                      <strong>{house.host.name}</strong>
+                    </span>
                   </div>
                 </div>
               </div>
-              <p>{house.description}</p>
+              {/* description */}
+              <div className="mb-5">
+                <p>{house.description}</p>
+              </div>
             </div>
             {/* leave a review */}
             <div>
               <h2>{reviews.length} Reviews</h2>
               {reviewSubmitted ? (
-                <div>Thank you so much for your review! ^_^</div>
+                <div
+                  style={{
+                    backgroundColor: `#ddd`,
+                    borderRadius: `10px`,
+                    textAlign: "left",
+                  }}
+                  className="p-3"
+                >
+                  <span style={{ display: "block" }}>
+                    <strong>Thank you for your review.</strong>
+                  </span>
+                  <span style={{ display: "block" }}>
+                    <em>Sent on DD Month YYY at HH:MM</em>
+                  </span>
+                </div>
               ) : (
                 <div>
                   <span className="d-block">Leave a review</span>
@@ -204,6 +242,7 @@ function House() {
                     <span className="d-block">
                       <i className="fa-solid fa-thumbs-up"></i>{" "}
                       <input type="radio" name="reviewVerdict" value={1} />
+                      {"   "}
                       <i className="fa-solid fa-thumbs-down"></i>{" "}
                       <input type="radio" name="reviewVerdict" value={-1} />
                     </span>
@@ -216,11 +255,14 @@ function House() {
             <div className="mt-5">
               <div className="container">
                 {reviews.map((review, i) => (
-                  <div className="row row-cols-2 gx-5 justify-content-between">
-                    <div className="col-1">
+                  <div
+                    className="row row-cols-2 gx-5 mb-2 p-1 justify-content-between"
+                    style={{ border: `solid 1px #eee`, borderRadius: `10px` }}
+                  >
+                    <div className="col-1 pt-2">
                       <img
                         src={review.author.avatar}
-                        style={{ width: `40px` }}
+                        style={{ width: `40px`, borderRadius: `100px` }}
                       />
                     </div>
                     <div className="col-11">
@@ -239,21 +281,43 @@ function House() {
             {/* this cell includes: request booking */}
             {/* <!-- request box --> */}
             {/* if booking == false, replace some content */}
-            <div className="card" style={{ width: `18rem` }}>
+            <div
+              className="card"
+              style={{ width: `100%`, boxShadow: `0px 5px 10px #00000050` }}
+            >
               <div className="card-body">
-                <h2 className="card-title">${house.price}/night</h2>
-                <span>
-                  <small>{reviews.length} Reviews</small>
-                </span>
+                <div className="mb-3">
+                  <h2 className="card-title">
+                    ${house.price}/<small>night</small>
+                  </h2>
+                  <span>
+                    <i className="fa-solid fa-thumbs-up"></i>
+                    <small> {reviews.length} Reviews</small>
+                  </span>
+                </div>
                 {bookingRequested ? (
-                  <div>Thank you for your enquiry.</div>
+                  <div
+                    style={{
+                      backgroundColor: `#ddd`,
+                      borderRadius: `10px`,
+                      textAlign: "left",
+                    }}
+                    className="p-3"
+                  >
+                    <span style={{ display: "block" }}>
+                      <strong>Thank you for your enquiry.</strong>
+                    </span>
+                    <span style={{ display: "block" }}>
+                      <em>Sent on DD Month YYY at HH:MM</em>
+                    </span>
+                  </div>
                 ) : (
                   <div>
                     <form onSubmit={requestBooking}>
                       <textarea
                         rows="7"
                         placeholder="Send the host a message..."
-                        className="d-block"
+                        className="d-block mt-3 mb-3"
                         style={{ width: `100%` }}
                       ></textarea>
                       <button className="btn btn-success">
