@@ -118,6 +118,7 @@ function House() {
                     {house.photos.map((photo, i) => (
                       // <HouseGalleryPhoto key={i} photo={photo} />
                       <div
+                        key={i}
                         className="col m-0 g-0 p-4"
                         onClick={() => setSelectedPhoto(photo)}
                       >
@@ -221,6 +222,7 @@ function House() {
               <div className="container">
                 {reviews.map((review, i) => (
                   <div
+                    key={i}
                     className="row row-cols-2 gx-5 mb-2 p-1 justify-content-between"
                     style={{ border: `solid 1px #eee`, borderRadius: `10px` }}
                   >

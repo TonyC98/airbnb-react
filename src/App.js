@@ -12,7 +12,17 @@ import Profile from "./pages/Profile";
 function App() {
   return (
     <div className="App">
-      <Profile />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/house" element={<House />} />
+          <Route path="/houseCreate" element={<HouseCreate />} />
+          <Route path="/houseEdit" element={<HouseEdit />} />
+          <Route path="/houses" element={<Houses />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
