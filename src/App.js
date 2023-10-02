@@ -6,7 +6,7 @@ import HouseEdit from "./pages/HouseEdit";
 function App() {
   return (
     <div className="App">
-      <HouseEdit />
+      <House />
     </div>
   );
 }
