@@ -1,4 +1,25 @@
-export default function Reviews() {
+export default function Reviews(props) {
+  function addReview(e) {
+    e.preventDefault();
+
+    // clone array to avoid mutating the state (react doesn't like that)
+    // const newReviews = [...reviews]; // alternative 1: spread operator (you can research about it)
+    const newReviews = props.reviews.slice(); // alternative 2: slice the pie in 1 piece ^_^
+
+    newReviews.unshift({
+      date: "30 February 2029",
+      description: e.target.reviewContent.value,
+      rating: e.target.reviewVerdict.value,
+      author: {
+        name: "new reviewer",
+        avatar: "https://randomuser.me/api/portraits/men/11.jpg",
+      },
+    });
+
+    props.setReviews(newReviews);
+    props.setReviewSubmitted(true);
+  }
+
   return (
     <>
       <div>
