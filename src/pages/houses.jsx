@@ -1,3 +1,4 @@
+import Thumbnail from './Thumbnail'
 function Houses() {
   return (
     <>
@@ -14,7 +15,7 @@ function Houses() {
         </div>
       </nav>
       {/* <!-- Form --> */}
-      <div className="container text-center mb-5" height="30px">
+      <form className="container text-center mb-5" height="30px">
         <div className="row">
           {/* <!-- location --> */}
           <div className="input-group mb-3 col">
@@ -89,12 +90,13 @@ function Houses() {
             </button>
           </div>
         </div>
-      </div>
+      </form>
+      <Thumbnail />
       {/* <!-- Cards --> */}
-      <div className="container">
-        <div className="row row-cols-4 g-4">
-          {/* <!-- Card 1 --> */}
-          <div className="col">
+      {/* <div className="container">
+        <div className="row row-cols-4 g-4"> */}
+      {/* <!-- Card 1 --> */}
+      {/* <div className="col">
             <div className="card">
               <img
                 src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2002/house_02_01.png"
@@ -122,9 +124,9 @@ function Houses() {
                 <span className="float-end">Price</span>
               </div>
             </div>
-          </div>
-          {/* <!-- Card 2 --> */}
-          <div className="col">
+          </div> */}
+      {/* <!-- Card 2 --> */}
+      {/* <div className="col">
             <div className="card">
               <img
                 src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2003/house_03_01.png"
@@ -152,9 +154,9 @@ function Houses() {
                 <span className="float-end">Price</span>
               </div>
             </div>
-          </div>
-          {/* <!-- Card 3 --> */}
-          <div className="col">
+          </div> */}
+      {/* <!-- Card 3 --> */}
+      {/* <div className="col">
             <div className="card">
               <img
                 src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2004/house_04_01.png"
@@ -182,9 +184,9 @@ function Houses() {
                 <span className="float-end">Price</span>
               </div>
             </div>
-          </div>
-          {/* <!-- Card 4 --> */}
-          <div className="col">
+          </div> */}
+      {/* <!-- Card 4 --> */}
+      {/* <div className="col">
             <div className="card">
               <img
                 src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2005/house_05_01.png"
@@ -212,9 +214,9 @@ function Houses() {
                 <span className="float-end">Price</span>
               </div>
             </div>
-          </div>
-          {/* <!-- Card 5 --> */}
-          <div className="col">
+          </div> */}
+      {/* <!-- Card 5 --> */}
+      {/* <div className="col">
             <div className="card">
               <img
                 src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2006/house_06_01.png"
@@ -242,9 +244,9 @@ function Houses() {
                 <span className="float-end">Price</span>
               </div>
             </div>
-          </div>
-          {/* <!-- Card 6 --> */}
-          <div className="col">
+          </div> */}
+      {/* <!-- Card 6 --> */}
+      {/* <div className="col">
             <div className="card">
               <img
                 src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2007/house_07_01.png"
@@ -272,9 +274,9 @@ function Houses() {
                 <span className="float-end">Price</span>
               </div>
             </div>
-          </div>
-          {/* <!-- Card 7 --> */}
-          <div className="col">
+          </div> */}
+      {/* <!-- Card 7 --> */}
+      {/* <div className="col">
             <div className="card">
               <img
                 src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2008/house_08_01.png"
@@ -302,9 +304,9 @@ function Houses() {
                 <span className="float-end">Price</span>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div> */}
+      {/* </div>
+      </div> */}
     </>
   )
 }

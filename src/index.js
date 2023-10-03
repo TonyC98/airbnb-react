@@ -4,6 +4,7 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import Houses from './pages/Houses'
+import Thumbnail from './pages/Thumbnail'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
