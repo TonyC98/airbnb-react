@@ -1,5 +1,21 @@
 import Thumbnail from './Thumbnail'
 function Houses() {
+  function sendSearchForm(e) {
+    e.preventDefault()
+    let search = {
+      location: e.target.location.value,
+      rooms: e.target.rooms.value,
+      price: e.target.price.value,
+      sort: e.target.sorting.value,
+      name: e.target.name.value,
+    }
+    console.log(search.location)
+    console.log(search.rooms)
+    console.log(search.price)
+    console.log(search.sort)
+    console.log(search.name)
+  }
+
   return (
     <>
       {/* <!-- Nav --> */}
@@ -15,20 +31,34 @@ function Houses() {
         </div>
       </nav>
       {/* <!-- Form --> */}
-      <form className="container text-center mb-5" height="30px">
+      <form
+        className="container text-center mb-5"
+        height="30px"
+        onSubmit={(e) => sendSearchForm(e)}
+      >
         <div className="row">
           {/* <!-- location --> */}
           <div className="input-group mb-3 col">
             <span className="input-group-text" id="basic-addon1">
               <i className="bi bi-geo-alt-fill"></i>
             </span>
-            <select className="form-select form-select-lg">
-              <option type="text" placeholder="Any Location">
+            <select className="form-select form-select-lg" name="location">
+              <option
+                type="text"
+                placeholder="Any Location"
+                value="Any location"
+              >
                 Any location
               </option>
-              <option type="text">Koh Phangan</option>
-              <option>koh Samui</option>
-              <option>Bali</option>
+              <option type="text" value="Koh Phangan">
+                Koh Phangan
+              </option>
+              <option type="text" value="Koh Samui">
+                koh Samui
+              </option>
+              <option type="text" value="Bali">
+                Bali
+              </option>
             </select>
           </div>
           {/* <!-- rooms --> */}
@@ -36,15 +66,25 @@ function Houses() {
             <span className="input-group-text" id="basic-addon1">
               <i className="bi bi-house-door-fill"></i>
             </span>
-            <select className="form-select form-select-lg">
+            <select className="form-select form-select-lg" name="rooms">
               <option type="text" placeholder="Any Location">
                 Any rooms
               </option>
-              <option type="text">1 room</option>
-              <option type="text">2 rooms</option>
-              <option type="text">3 rooms</option>
-              <option type="text">4 rooms</option>
-              <option type="text">5 rooms</option>
+              <option type="text" value="1">
+                1 room
+              </option>
+              <option type="text" value="2">
+                2 rooms
+              </option>
+              <option type="text" value="3">
+                3 rooms
+              </option>
+              <option type="text" value="4">
+                4 rooms
+              </option>
+              <option type="text" value="5">
+                5 rooms
+              </option>
             </select>
           </div>
           {/* <!-- price --> */}
@@ -58,6 +98,7 @@ function Houses() {
               placeholder="max price"
               aria-label="Username"
               aria-describedby="basic-addon1"
+              name="price"
             />
           </div>
           {/* <!-- sorting --> */}
@@ -65,11 +106,14 @@ function Houses() {
             <span className="input-group-text" id="basic-addon1">
               $
             </span>
-            <select className="form-select form-select-lg">
-              <option type="text" placeholder="Any Location">
+            <select className="form-select form-select-lg" name="sorting">
+              <option type="text" placeholder="Any Location" value="ascending">
                 Price (low to high)
               </option>
-              <option type="text"> Price (high to low)</option>
+              <option type="text" value="descending">
+                {' '}
+                Price (high to low)
+              </option>
             </select>
           </div>
           {/* <!-- search --> */}
@@ -81,6 +125,7 @@ function Houses() {
               placeholder="House name"
               aria-label="Username"
               aria-describedby="basic-addon1"
+              name="name"
             />
           </div>
           {/* <!-- button --> */}
@@ -92,221 +137,6 @@ function Houses() {
         </div>
       </form>
       <Thumbnail />
-      {/* <!-- Cards --> */}
-      {/* <div className="container">
-        <div className="row row-cols-4 g-4"> */}
-      {/* <!-- Card 1 --> */}
-      {/* <div className="col">
-            <div className="card">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2002/house_02_01.png"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <p>
-                  <i className="bi bi-geo-alt-fill"></i>
-                  <small>
-                    Location{' '}
-                    <strong>
-                      <i className="bi bi-dot"></i>
-                    </strong>{' '}
-                    number of rooms
-                  </small>
-                </p>
-                <h4 className="h4">Card title</h4>
-                <i
-                  className="bi bi-hand-thumbs-up-fill"
-                  style={{ color: `green` }}
-                ></i>
-                <span>Reviews</span>
-                <i className="fa-solid fa-location-dot"></i>
-                <span className="float-end">Price</span>
-              </div>
-            </div>
-          </div> */}
-      {/* <!-- Card 2 --> */}
-      {/* <div className="col">
-            <div className="card">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2003/house_03_01.png"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <p>
-                  <i className="bi bi-geo-alt-fill"></i>
-                  <small>
-                    Location{' '}
-                    <strong>
-                      <i className="bi bi-dot"></i>
-                    </strong>{' '}
-                    number of rooms
-                  </small>
-                </p>
-                <h4 className="h4">Card title</h4>
-                <i
-                  className="bi bi-hand-thumbs-up-fill"
-                  style={{ color: `green` }}
-                ></i>
-                <span>Reviews</span>
-                <i className="fa-solid fa-location-dot"></i>
-                <span className="float-end">Price</span>
-              </div>
-            </div>
-          </div> */}
-      {/* <!-- Card 3 --> */}
-      {/* <div className="col">
-            <div className="card">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2004/house_04_01.png"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <p>
-                  <i className="bi bi-geo-alt-fill"></i>
-                  <small>
-                    Location{' '}
-                    <strong>
-                      <i className="bi bi-dot"></i>
-                    </strong>{' '}
-                    number of rooms
-                  </small>
-                </p>
-                <h4 className="h4">Card title</h4>
-                <i
-                  className="bi bi-hand-thumbs-up-fill"
-                  style={{ color: `green` }}
-                ></i>
-                <span>Reviews</span>
-                <i className="fa-solid fa-location-dot"></i>
-                <span className="float-end">Price</span>
-              </div>
-            </div>
-          </div> */}
-      {/* <!-- Card 4 --> */}
-      {/* <div className="col">
-            <div className="card">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2005/house_05_01.png"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <p>
-                  <i className="bi bi-geo-alt-fill"></i>
-                  <small>
-                    Location{' '}
-                    <strong>
-                      <i className="bi bi-dot"></i>
-                    </strong>{' '}
-                    number of rooms
-                  </small>
-                </p>
-                <h4 className="h4">Card title</h4>
-                <i
-                  className="bi bi-hand-thumbs-up-fill"
-                  style={{ color: `green` }}
-                ></i>
-                <span>Reviews</span>
-                <i className="fa-solid fa-location-dot"></i>
-                <span className="float-end">Price</span>
-              </div>
-            </div>
-          </div> */}
-      {/* <!-- Card 5 --> */}
-      {/* <div className="col">
-            <div className="card">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2006/house_06_01.png"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <p>
-                  <i className="bi bi-geo-alt-fill"></i>
-                  <small>
-                    Location{' '}
-                    <strong>
-                      <i className="bi bi-dot"></i>
-                    </strong>{' '}
-                    number of rooms
-                  </small>
-                </p>
-                <h4 className="h4">Card title</h4>
-                <i
-                  className="bi bi-hand-thumbs-up-fill"
-                  style={{ color: `green` }}
-                ></i>
-                <span>Reviews</span>
-                <i className="fa-solid fa-location-dot"></i>
-                <span className="float-end">Price</span>
-              </div>
-            </div>
-          </div> */}
-      {/* <!-- Card 6 --> */}
-      {/* <div className="col">
-            <div className="card">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2007/house_07_01.png"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <p>
-                  <i className="bi bi-geo-alt-fill"></i>
-                  <small>
-                    Location{' '}
-                    <strong>
-                      <i className="bi bi-dot"></i>
-                    </strong>{' '}
-                    number of rooms
-                  </small>
-                </p>
-                <h4 className="h4">Card title</h4>
-                <i
-                  className="bi bi-hand-thumbs-up-fill"
-                  style={{ color: `green` }}
-                ></i>
-                <span>Reviews</span>
-                <i className="fa-solid fa-location-dot"></i>
-                <span className="float-end">Price</span>
-              </div>
-            </div>
-          </div> */}
-      {/* <!-- Card 7 --> */}
-      {/* <div className="col">
-            <div className="card">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2008/house_08_01.png"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <p>
-                  <i className="bi bi-geo-alt-fill"></i>
-                  <small>
-                    Location{' '}
-                    <strong>
-                      <i className="bi bi-dot"></i>
-                    </strong>{' '}
-                    number of rooms
-                  </small>
-                </p>
-                <h4 className="h4">Card title</h4>
-                <i
-                  className="bi bi-hand-thumbs-up-fill"
-                  style={{ color: `green` }}
-                ></i>
-                <span>Reviews</span>
-                <i className="fa-solid fa-location-dot"></i>
-                <span className="float-end">Price</span>
-              </div>
-            </div>
-          </div> */}
-      {/* </div>
-      </div> */}
     </>
   )
 }

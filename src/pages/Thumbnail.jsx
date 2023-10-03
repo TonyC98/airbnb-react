@@ -35,7 +35,7 @@ export default function Thumbnail() {
         'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295027/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2005/house_05_01.png',
       title: 'Cottage in Green Village',
       price: 180,
-      location: 'Koh Panghan',
+      location: 'Bali',
       rooms: 3,
       reviews: 3,
       score: 1,
@@ -64,8 +64,8 @@ export default function Thumbnail() {
   return (
     <div className="container">
       <div className="row row-cols-4 g-4">
-        {houses.map((house) => (
-          <div className="col">
+        {houses.map((house, index) => (
+          <div className="col" key={index}>
             <div className="card">
               <img
                 src={house.image}
