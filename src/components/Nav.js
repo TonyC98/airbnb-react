@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 export default function Nav() {
   return (
@@ -10,7 +10,7 @@ export default function Nav() {
             {/* logo */}
             <img
               src="images/logo-airbnb.png"
-              style={{ width: "100px" }}
+              style={{ width: '100px' }}
               alt="Airbnb.com"
             />
           </div>
@@ -36,5 +36,5 @@ export default function Nav() {
         </div>
       </div>
     </div>
-  );
+  )
 }

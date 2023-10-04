@@ -1,6 +1,6 @@
 function HouseCreate() {
   function addHouse(e) {
-    e.preventDefault();
+    e.preventDefault()
     let newHouse = {
       title: e.target.newHouseTitle.value,
       description: e.target.newHouseDesc.value,
@@ -21,12 +21,12 @@ function HouseCreate() {
         e.target.photo09.value,
       ],
       host: {
-        name: "name",
-        avatar: "https://randomuser.me/api/portraits/men/11.jpg",
+        name: 'name',
+        avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
       },
-    };
-    console.log(newHouse.photos);
-    console.log(newHouse);
+    }
+    console.log(newHouse.photos)
+    console.log(newHouse)
     // console.log(
     //   e.target.newHouseTitle.value,
     //   e.target.newHouseDesc.value,
@@ -43,7 +43,7 @@ function HouseCreate() {
               {/* logo */}
               <img
                 src="images/logo-airbnb.png"
-                style={{ width: "100px" }}
+                style={{ width: '100px' }}
                 alt="Airbnb.com"
               />
             </div>
@@ -177,9 +177,9 @@ function HouseCreate() {
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default HouseCreate;
+export default HouseCreate
 
 // rename commit

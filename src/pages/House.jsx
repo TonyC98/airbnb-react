@@ -1,87 +1,87 @@
 // Packages
-import { useState } from "react";
+import { useState } from 'react'
 // import HouseGalleryPhoto from "./HouseGalleryPhoto";
-import Nav from "../components/Nav";
+import Nav from '../components/Nav'
 
 // Component
 function House() {
   // States & Variables
   let house = {
-    title: "Luxury Villa in Chaweng",
+    title: 'Luxury Villa in Chaweng',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus feugiat in ante metus dictum at tempor commodo. Purus in massa tempor nec feugiat nisl. Non curabitur gravida arcu ac tortor. Arcu non sodales neque sodales ut etiam sit amet nisl. Diam maecenas sed enim ut sem viverra aliquet eget. Amet nisl purus in mollis. Viverra vitae congue eu consequat ac felis donec et odio.",
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus feugiat in ante metus dictum at tempor commodo. Purus in massa tempor nec feugiat nisl. Non curabitur gravida arcu ac tortor. Arcu non sodales neque sodales ut etiam sit amet nisl. Diam maecenas sed enim ut sem viverra aliquet eget. Amet nisl purus in mollis. Viverra vitae congue eu consequat ac felis donec et odio.',
     price: 320,
     booking: false,
-    location: "Koh Samui",
+    location: 'Koh Samui',
     rooms: 4,
     rating: -1,
     photos: [
-      "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png",
-      "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png",
-      "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png",
-      "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png",
-      "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png",
-      "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png",
-      "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png",
-      "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png",
-      "https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png",
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png',
+      'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png',
     ],
     host: {
-      name: "Oisin Allen",
-      avatar: "https://randomuser.me/api/portraits/men/11.jpg",
+      name: 'Oisin Allen',
+      avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
     },
-  };
+  }
 
-  const [selectedPhoto, setSelectedPhoto] = useState(house.photos[0]);
-  const [reviewSubmitted, setReviewSubmitted] = useState(false);
-  const [bookingRequested, setBookingRequested] = useState(house.booking);
+  const [selectedPhoto, setSelectedPhoto] = useState(house.photos[0])
+  const [reviewSubmitted, setReviewSubmitted] = useState(false)
+  const [bookingRequested, setBookingRequested] = useState(house.booking)
   const [reviews, setReviews] = useState([
     {
-      date: "02 February 2023",
-      description: "it sux. 3/10.",
+      date: '02 February 2023',
+      description: 'it sux. 3/10.',
       rating: -1,
       author: {
-        name: "Hongle Bong",
-        avatar: "https://randomuser.me/api/portraits/men/11.jpg",
+        name: 'Hongle Bong',
+        avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
       },
     },
     {
-      date: "05 May 2023",
-      description: "nice. 8/10.",
+      date: '05 May 2023',
+      description: 'nice. 8/10.',
       rating: 1,
       author: {
-        name: "Float Aloft",
-        avatar: "https://randomuser.me/api/portraits/men/11.jpg",
+        name: 'Float Aloft',
+        avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
       },
     },
-  ]);
+  ])
 
   // Functions
   function addReview(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     // clone array to avoid mutating the state (react doesn't like that)
     // const newReviews = [...reviews]; // alternative 1: spread operator (you can research about it)
-    const newReviews = reviews.slice(); // alternative 2: slice the pie in 1 piece ^_^
+    const newReviews = reviews.slice() // alternative 2: slice the pie in 1 piece ^_^
 
     newReviews.unshift({
-      date: "30 February 2029",
+      date: '30 February 2029',
       description: e.target.reviewContent.value,
       rating: e.target.reviewVerdict.value,
       author: {
-        name: "new reviewer",
-        avatar: "https://randomuser.me/api/portraits/men/11.jpg",
+        name: 'new reviewer',
+        avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
       },
-    });
+    })
 
-    setReviews(newReviews);
-    setReviewSubmitted(true);
+    setReviews(newReviews)
+    setReviewSubmitted(true)
   }
 
   function requestBooking(e) {
-    e.preventDefault();
-    house.booking = true;
-    setBookingRequested(house.booking);
+    e.preventDefault()
+    house.booking = true
+    setBookingRequested(house.booking)
   }
 
   // const myVar = reviewSubmitted ? 'hi' : 'bye'
@@ -103,8 +103,8 @@ function House() {
               className="col-6"
               style={{
                 backgroundImage: `url(${selectedPhoto})`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
               }}
             >
               {/* main photo */}
@@ -125,7 +125,7 @@ function House() {
                         <img
                           src={photo}
                           key={i}
-                          style={{ width: `100%`, cursor: "pointer" }}
+                          style={{ width: `100%`, cursor: 'pointer' }}
                         />
                       </div>
                     ))}
@@ -147,7 +147,7 @@ function House() {
                 <h1>{house.title}</h1>
                 <span>
                   <small>
-                    <i className="fa-solid fa-location-dot"></i>{" "}
+                    <i className="fa-solid fa-location-dot"></i>{' '}
                     {house.location} • {house.rooms} Rooms
                   </small>
                 </span>
@@ -184,14 +184,14 @@ function House() {
                   style={{
                     backgroundColor: `#ddd`,
                     borderRadius: `10px`,
-                    textAlign: "left",
+                    textAlign: 'left',
                   }}
                   className="p-3"
                 >
-                  <span style={{ display: "block" }}>
+                  <span style={{ display: 'block' }}>
                     <strong>Thank you for your review.</strong>
                   </span>
-                  <span style={{ display: "block" }}>
+                  <span style={{ display: 'block' }}>
                     <em>Sent on DD Month YYY at HH:MM</em>
                   </span>
                 </div>
@@ -206,10 +206,10 @@ function House() {
                       style={{ width: `100%` }}
                     ></textarea>
                     <span className="d-block">
-                      <i className="fa-solid fa-thumbs-up"></i>{" "}
+                      <i className="fa-solid fa-thumbs-up"></i>{' '}
                       <input type="radio" name="reviewVerdict" value={1} />
-                      {"   "}
-                      <i className="fa-solid fa-thumbs-down"></i>{" "}
+                      {'   '}
+                      <i className="fa-solid fa-thumbs-down"></i>{' '}
                       <input type="radio" name="reviewVerdict" value={-1} />
                     </span>
                     <button className="btn btn-success">Submit</button>
@@ -267,14 +267,14 @@ function House() {
                     style={{
                       backgroundColor: `#ddd`,
                       borderRadius: `10px`,
-                      textAlign: "left",
+                      textAlign: 'left',
                     }}
                     className="p-3"
                   >
-                    <span style={{ display: "block" }}>
+                    <span style={{ display: 'block' }}>
                       <strong>Thank you for your enquiry.</strong>
                     </span>
-                    <span style={{ display: "block" }}>
+                    <span style={{ display: 'block' }}>
                       <em>Sent on DD Month YYY at HH:MM</em>
                     </span>
                   </div>
@@ -299,7 +299,7 @@ function House() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default House;
+export default House

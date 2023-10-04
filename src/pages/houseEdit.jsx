@@ -8,7 +8,7 @@ function HouseEdit() {
               {/* logo */}
               <img
                 src="images/logo-airbnb.png"
-                style={{ width: "100px" }}
+                style={{ width: '100px' }}
                 alt="Airbnb.com"
               />
             </div>
@@ -153,9 +153,9 @@ function HouseEdit() {
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default HouseEdit;
+export default HouseEdit
 
 // rename commit

@@ -4,14 +4,14 @@ function Login() {
     <div
       style={{
         backgroundImage: `url('thailand.jpg')`,
-        backgroundSize: "100% 100%",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: '100% 100%',
+        backgroundRepeat: 'no-repeat',
       }}
       className="vh-100 vw-100"
     >
-      <div className="card mx-auto p-10" style={{ width: "18rem" }}>
+      <div className="card mx-auto p-10" style={{ width: '18rem' }}>
         <img
-          style={{ width: "6rem" }}
+          style={{ width: '6rem' }}
           src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1642399114/portal/web%20development%20beginners/05%20Project%20Airbnb/assets/logo-airbnb.png"
           className="card-img-top"
           alt="Airbnb Logo"
@@ -37,7 +37,7 @@ function Login() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login

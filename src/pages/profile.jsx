@@ -77,7 +77,7 @@ function Profile() {
             <a href="#" className="btn btn-success">
               List a House
             </a>
-            <div className="card mb-3 mt-3" style={{ width: "100%" }}>
+            <div className="card mb-3 mt-3" style={{ width: '100%' }}>
               <div className="row g-0">
                 <div className="col-md-4">
                   <img
@@ -113,7 +113,7 @@ function Profile() {
                 </div>
               </div>
             </div>
-            <div className="card mb-3 mt-3" style={{ width: "100%" }}>
+            <div className="card mb-3 mt-3" style={{ width: '100%' }}>
               <div className="row g-0">
                 <div className="col-md-4">
                   <img
@@ -153,7 +153,7 @@ function Profile() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Profile;
+export default Profile
