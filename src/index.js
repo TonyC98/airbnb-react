@@ -9,7 +9,7 @@ import Thumbnail from './pages/Thumbnail'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <Houses />
+    <App />
   </React.StrictMode>
 )
 
