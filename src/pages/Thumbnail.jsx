@@ -90,7 +90,6 @@ export default function Thumbnail() {
                   style={{ color: `green` }}
                 ></i>
                 <span>{house.reviews}</span>
-                <i className="fa-solid fa-location-dot"></i>
                 <span className="float-end">
                   <span>$</span>
                   {house.price}
