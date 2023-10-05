@@ -21,18 +21,6 @@ function Houses() {
 
   return (
     <>
-      {/* <!-- Top Navigation Bar --> */}
-      {/* <nav className="navbar bg-white">
-        <div className="container">
-          <a className="navbar-brand" href="#">
-            <img src="images/logo-airbnb.png" alt="airbnb logo" />
-          </a>
-          <div>
-            <a className="btn btn-light">Login</a>
-            <a className="btn btn-light">Logout</a>
-          </div>
-        </div>
-      </nav> */}
       <Nav />
       {/* <!-- Search House Form --> */}
       <form

@@ -1,4 +1,15 @@
+import { Link } from 'react-router-dom'
+
 function Login() {
+  function sendLogin(e) {
+    e.preventDefault()
+    let login = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+    }
+    console.log(login)
+  }
+
   return (
     // main this is the background image
     <div
@@ -17,22 +28,24 @@ function Login() {
           alt="Airbnb Logo"
         />
         <div className="card-body">
+          <form className="loginForm" onSubmit={(e) => sendLogin(e)}>
+            <div className="mb-3">
+              <label className="form-label">Email</label>
+              <input type="email" className="form-control" name="email" />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Password</label>
+              <input type="password" className="form-control" name="password" />
+            </div>
+            <button type="submit" className="btn btn-success">
+              Login
+            </button>
+          </form>
           <div className="mb-3">
-            <label className="form-label">Email</label>
-            <input type="email" className="form-control" />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Password</label>
-            <input type="password" className="form-control" />
-          </div>
-          <a href="#" className="btn btn-success">
-            Login
-          </a>
-          <div className="mb-3">
-            <label className="form-label">New to Airbnb?</label>
-            <a href="login.html" className="link-success">
+            <label className="form-label">New to Airbnb? </label>
+            <Link to="/Signup" className="link-success">
               Signup
-            </a>
+            </Link>
           </div>
         </div>
       </div>
