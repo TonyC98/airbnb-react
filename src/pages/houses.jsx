@@ -11,11 +11,6 @@ function Houses() {
       sort: e.target.sorting.value,
       name: e.target.name.value,
     }
-    // console.log(search.location)
-    // console.log(search.rooms)
-    // console.log(search.price)
-    // console.log(search.sort)
-    // console.log(search.name)
     console.log(search)
   }
 
@@ -46,7 +41,7 @@ function Houses() {
                 Koh Phangan
               </option>
               <option type="text" value="Koh Samui">
-                koh Samui
+                Koh Samui
               </option>
               <option type="text" value="Bali">
                 Bali

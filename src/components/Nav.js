@@ -58,14 +58,14 @@ export default function Nav() {
               />
               UserName
             </Link>
-            <Link to="/l"></Link>
-            <a
+            <Link
+              to="/"
               type="button"
               className="btn btn-outline-secondary"
               onClick={() => setLogUser(false)}
             >
               Logout
-            </a>
+            </Link>
           </div>
         </div>
       </div>

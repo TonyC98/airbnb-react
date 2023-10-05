@@ -1,4 +1,17 @@
+import { Link } from 'react-router-dom'
+
 function Signup() {
+  function sendSignup(e) {
+    e.preventDefault()
+    let signup = {
+      name: e.target.name.value,
+      picture: e.target.picture.value,
+      email: e.target.email.value,
+      password: e.target.password.value,
+    }
+    console.log(signup)
+  }
+
   return (
     // main this is the background image
     <div
@@ -17,30 +30,32 @@ function Signup() {
           alt="Airbnb Logo"
         />
         <div className="card-body">
-          <div className="mb-3">
-            <label className="form-label">Your Full Name</label>
-            <input type="text" className="form-control" />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Profile Picture</label>
-            <input type="file" className="form-control" />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Email</label>
-            <input type="email" className="form-control" />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Password</label>
-            <input type="password" className="form-control" />
-          </div>
-          <a href="#" className="btn btn-success">
-            Signup
-          </a>
+          <form className="loginForm" onSubmit={(e) => sendSignup(e)}>
+            <div className="mb-3">
+              <label className="form-label">Your Full Name</label>
+              <input type="text" className="form-control" name="name" />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Profile Picture</label>
+              <input type="file" className="form-control" name="picture" />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Email</label>
+              <input type="email" className="form-control" name="email" />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Password</label>
+              <input type="password" className="form-control" name="password" />
+            </div>
+            <button type="submit" className="btn btn-success">
+              Signup
+            </button>
+          </form>
           <div className="mb-3">
             <label className="form-label">Already have an account?</label>
-            <a href="login.html" className="link-success">
+            <Link to="/Login" className="link-success">
               Login
-            </a>
+            </Link>
           </div>
         </div>
       </div>
