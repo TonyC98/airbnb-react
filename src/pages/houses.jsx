@@ -5,20 +5,21 @@ function Houses() {
     let search = {
       location: e.target.location.value,
       rooms: e.target.rooms.value,
-      price: e.target.price.value,
+      maxPrice: e.target.maxPrice.value,
       sort: e.target.sorting.value,
       name: e.target.name.value,
     }
-    console.log(search.location)
-    console.log(search.rooms)
-    console.log(search.price)
-    console.log(search.sort)
-    console.log(search.name)
+    // console.log(search.location)
+    // console.log(search.rooms)
+    // console.log(search.price)
+    // console.log(search.sort)
+    // console.log(search.name)
+    console.log(search)
   }
 
   return (
     <>
-      {/* <!-- Nav --> */}
+      {/* <!-- Top Navigation Bar --> */}
       <nav className="navbar bg-white">
         <div className="container">
           <a className="navbar-brand" href="#">
@@ -30,7 +31,7 @@ function Houses() {
           </div>
         </div>
       </nav>
-      {/* <!-- Form --> */}
+      {/* <!-- Search House Form --> */}
       <form
         className="container text-center mb-5"
         height="30px"
@@ -46,9 +47,9 @@ function Houses() {
               <option
                 type="text"
                 placeholder="Any Location"
-                value="Any location"
+                value="Any Location"
               >
-                Any location
+                Any Location
               </option>
               <option type="text" value="Koh Phangan">
                 Koh Phangan
@@ -67,8 +68,8 @@ function Houses() {
               <i className="bi bi-house-door-fill"></i>
             </span>
             <select className="form-select form-select-lg" name="rooms">
-              <option type="text" placeholder="Any Location">
-                Any rooms
+              <option type="text" placeholder="Any Rooms">
+                Any Rooms
               </option>
               <option type="text" value="1">
                 1 room
@@ -90,15 +91,15 @@ function Houses() {
           {/* <!-- price --> */}
           <div className="input-group mb-3 col">
             <span className="input-group-text" id="basic-addon1">
-              <i className="bi bi-arrows-vertical"></i>
+              {/* <i className="bi bi-arrows-vertical"></i> */}$
             </span>
             <input
               type="number"
               className="form-control"
-              placeholder="max price"
+              placeholder="Max Price"
               aria-label="Username"
               aria-describedby="basic-addon1"
-              name="price"
+              name="maxPrice"
             />
           </div>
           {/* <!-- sorting --> */}
@@ -107,11 +108,11 @@ function Houses() {
               $
             </span>
             <select className="form-select form-select-lg" name="sorting">
-              <option type="text" placeholder="Any Location" value="ascending">
+              <option type="text" placeholder="Sorting" value="ascending">
                 Price (low to high)
               </option>
               <option type="text" value="descending">
-                {' '}
+                {/* {' '} */}
                 Price (high to low)
               </option>
             </select>
@@ -122,7 +123,7 @@ function Houses() {
             <input
               type="text"
               className="form-control"
-              placeholder="House name"
+              placeholder="House Name..."
               aria-label="Username"
               aria-describedby="basic-addon1"
               name="name"

@@ -1,46 +1,9 @@
+import NavBar from '../components/NavBar'
+
 function Profile() {
   return (
     <>
-      {/* // // NAVIGATION LOGO BAR WITH THE USER LOGGED IN */}
-      <nav className="navbar bg-white">
-        <div className="container-fluid">
-          <img
-            src="logo-airbnb.png"
-            alt="airbnb logo"
-            height="50"
-            className="navbar-brand"
-          />
-          <div>
-            <a href="#" type="button" className="btn btn-outline-dark">
-              <img
-                src="https://randomuser.me/api/portraits/men/11.jpg"
-                alt="User Photo"
-                height="20"
-              />
-              User Name
-            </a>
-            <a href="#" type="button" className="btn btn-outline-dark">
-              Logout
-            </a>
-          </div>
-        </div>
-      </nav>
-      {/* // NNAVIGATION LOGO BAR WITHOUT USER
-      // <nav className="navbar bg-white">
-      //   <div className="container-fluid">
-      //     <img
-      //       src="logo-airbnb.png"
-      //       alt="airbnb logo"
-      //       height="50"
-      //       className="navbar-brand"
-      //     />
-      //     <div>
-      //       <a href="#" type="button" className="btn btn-outline-dark">
-      //         Sign in
-      //       </a>
-      //     </div>
-      //   </div>
-      // </nav> */}
+      <NavBar />
       {/* //MAIN GRID, 2 COLUMNS USER TO THE LEFT. LISTINGS TO THE RIGHT */}
       <div className="container text-left">
         <div className="row gx-5">
