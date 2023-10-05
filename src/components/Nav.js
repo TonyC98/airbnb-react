@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 export default function Nav() {
-  const [logUser, setLogUser] = useEffect(false)
+  const [logUser, setLogUser] = useState(false)
   console.log(logUser)
 
   if (logUser == false) {
@@ -22,7 +22,7 @@ export default function Nav() {
             </div>
             <div className="col text-end">
               <Link
-                // to="/login"
+                to="/login"
                 className="btn btn-outline-secondary"
                 onClick={() => setLogUser(true)}
               >

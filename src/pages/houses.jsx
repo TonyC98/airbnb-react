@@ -1,4 +1,6 @@
 import Thumbnail from './Thumbnail'
+import Nav from '../components/Nav'
+
 function Houses() {
   function sendSearchForm(e) {
     e.preventDefault()
@@ -20,7 +22,7 @@ function Houses() {
   return (
     <>
       {/* <!-- Top Navigation Bar --> */}
-      <nav className="navbar bg-white">
+      {/* <nav className="navbar bg-white">
         <div className="container">
           <a className="navbar-brand" href="#">
             <img src="images/logo-airbnb.png" alt="airbnb logo" />
@@ -30,7 +32,8 @@ function Houses() {
             <a className="btn btn-light">Logout</a>
           </div>
         </div>
-      </nav>
+      </nav> */}
+      <Nav />
       {/* <!-- Search House Form --> */}
       <form
         className="container text-center mb-5"

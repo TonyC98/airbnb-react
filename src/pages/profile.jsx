@@ -1,9 +1,9 @@
-import NavBar from '../components/NavBar'
+import Nav from '../components/Nav'
 
 function Profile() {
   return (
     <>
-      <NavBar />
+      <Nav />
       {/* //MAIN GRID, 2 COLUMNS USER TO THE LEFT. LISTINGS TO THE RIGHT */}
       <div className="container text-left">
         <div className="row gx-5">
