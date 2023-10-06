@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function Signup() {
-  function sendSignup(e) {
+  const navigate = useNavigate()
+
+  async function sendSignup(e) {
     e.preventDefault()
     let signup = {
       name: e.target.name.value,
@@ -9,8 +13,18 @@ function Signup() {
       email: e.target.email.value,
       password: e.target.password.value,
     }
+    let user = await axios.post('http://localhost:4000/signup', signup)
     console.log(signup)
+    console.log(user)
+
+    if (user.data.name) {
+      navigate('/')
+    } else {
+      alert(user.data)
+    }
   }
+
+  let ErrorMessage = ''
 
   return (
     // main this is the background image
@@ -50,6 +64,7 @@ function Signup() {
             <button type="submit" className="btn btn-success">
               Signup
             </button>
+            {ErrorMessage}
           </form>
           <div className="mb-3">
             <label className="form-label">Already have an account?</label>

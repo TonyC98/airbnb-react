@@ -1,13 +1,25 @@
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function Login() {
-  function sendLogin(e) {
+  const navigate = useNavigate()
+
+  async function sendLogin(e) {
     e.preventDefault()
     let login = {
       email: e.target.email.value,
       password: e.target.password.value,
     }
+    let session = await axios.post('http://localhost:4000/login', login)
     console.log(login)
+    console.log(session)
+
+    if (session.data.name) {
+      navigate('/')
+    } else {
+      alert(session.data)
+    }
   }
 
   return (
